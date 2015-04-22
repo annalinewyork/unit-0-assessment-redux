@@ -100,61 +100,61 @@ public class Unit0TestsRedux {
     }
 
     @Test
-    public void testReturnSumOfOddNumbersBetween1And100(){
+    public void testReturnSumOfOddNumbersBetween1And100() {
         assertEquals(2500, Unit0Exercises.returnSumOfOddNumbersBetween1And100());
     }
 
     @Test
-    public void testReturnSumOfTheFirst200MultiplesOf3(){
+    public void testReturnSumOfTheFirst200MultiplesOf3() {
         assertEquals(59700, Unit0Exercises.returnSumOfTheFirst200MultiplesOf3());
     }
 
     @Test
-    public void testIsEmptyString(){
+    public void testIsEmptyString() {
         assertTrue(Unit0Exercises.isEmptyString(""));
         assertFalse(Unit0Exercises.isEmptyString("hello"));
     }
 
     @Test
-    public void testAlternateS1AndS2XTimes(){
-        assertEquals("",                                    Unit0Exercises.alternateS1AndS2Xtimes("abra", "cadabra", 0));
-        assertEquals("abracadabra",                         Unit0Exercises.alternateS1AndS2Xtimes("abra", "cadabra", 1));
+    public void testAlternateS1AndS2XTimes() {
+        assertEquals("", Unit0Exercises.alternateS1AndS2Xtimes("abra", "cadabra", 0));
+        assertEquals("abracadabra", Unit0Exercises.alternateS1AndS2Xtimes("abra", "cadabra", 1));
         assertEquals("abracadabraabracadabra", Unit0Exercises.alternateS1AndS2Xtimes("abra", "cadabra", 2));
         assertEquals("abracadabraabracadabraabracadabra", Unit0Exercises.alternateS1AndS2Xtimes("abra", "cadabra", 3));
     }
 
     @Test
-    public void testStringSplit(){
+    public void testStringSplit() {
         assertEquals("ubi", Unit0Exercises.stringSplit("ubiquitous", "q"));
         assertEquals("hello", Unit0Exercises.stringSplit("hellogoodbye", "good"));
         assertEquals("", Unit0Exercises.stringSplit("fancy seeing you", "there"));
     }
 
     @Test
-    public void testReturnBeyonce(){
-      Singer singer = Unit0Exercises.returnBeyonce();
-      assertNotEquals(null, singer);
-      assertEquals("Beyonce", singer.getName());
-      assertEquals("USA", singer.getLocation());
+    public void testReturnBeyonce() {
+        Singer singer = Unit0Exercises.returnBeyonce();
+        assertNotEquals(null, singer);
+        assertEquals("Beyonce", singer.getName());
+        assertEquals("USA", singer.getLocation());
     }
 
     @Test
-    public void testReturnSingerChild(){
-      Singer s1 = new Singer("Beyonce", "USA");
-      Singer s2 = new Singer("Madonna", "USA");
-      Singer s3 = new Singer("Rihanna", "Barbados");
-      Singer child1 = Unit0Exercises.returnSingerChild(s1, s2);
-      Singer child2 = Unit0Exercises.returnSingerChild(s2, s3);
-      assertNotEquals(null, child1);
-      assertNotEquals(null, child2);
-      assertEquals("Beyonce", child1.getName());
-      assertEquals("USA", child1.getLocation());
-      assertEquals("Madonna", child2.getName());
-      assertEquals("Barbados", child2.getLocation());
+    public void testReturnSingerChild() {
+        Singer s1 = new Singer("Beyonce", "USA");
+        Singer s2 = new Singer("Madonna", "USA");
+        Singer s3 = new Singer("Rihanna", "Barbados");
+        Singer child1 = Unit0Exercises.returnSingerChild(s1, s2);
+        Singer child2 = Unit0Exercises.returnSingerChild(s2, s3);
+        assertNotEquals(null, child1);
+        assertNotEquals(null, child2);
+        assertEquals("Beyonce", child1.getName());
+        assertEquals("USA", child1.getLocation());
+        assertEquals("Madonna", child2.getName());
+        assertEquals("Barbados", child2.getLocation());
     }
 
     @Test
-    public void testReturnSingers(){
+    public void testReturnSingers() {
         HashMap<String, Singer> people = Unit0Exercises.returnSingers();
         assertNotEquals(null, people);
 
@@ -172,35 +172,35 @@ public class Unit0TestsRedux {
 
     }
 
-  @Test
-  public void testIsFromCanada() {
-    Singer s1 = new Singer("Bieber", "Canada");
-    Singer s2 = new Singer("Beyonce", "USA");
-    assertTrue(Unit0Exercises.isFromCanada(s1));
-    assertFalse(Unit0Exercises.isFromCanada(s2));
-  }
+    @Test
+    public void testIsFromCanada() {
+        Singer s1 = new Singer("Bieber", "Canada");
+        Singer s2 = new Singer("Beyonce", "USA");
+        assertTrue(Unit0Exercises.isFromCanada(s1));
+        assertFalse(Unit0Exercises.isFromCanada(s2));
+    }
 
-  @Test
-  public void testChangeJayZsLocationToLosAngeles() {
-    HashMap<String, Singer> singers = new HashMap<String, Singer>();
-    singers.put("Beyonce", new Singer("Beyonce", "USA"));
-    singers.put("Jay-Z", new Singer("Jay-Z", "USA"));
-    singers.put("Bieber", new Singer("Bieber", "Canada"));
-    Singer jayz = singers.get("Jay-Z");
-    Unit0Exercises.changeJayZsLocationToLosAngeles(singers);
-    assertEquals("Los Angeles", jayz.getLocation());
-  }
+    @Test
+    public void testChangeJayZsLocationToLosAngeles() {
+        HashMap<String, Singer> singers = new HashMap<String, Singer>();
+        singers.put("Beyonce", new Singer("Beyonce", "USA"));
+        singers.put("Jay-Z", new Singer("Jay-Z", "USA"));
+        singers.put("Bieber", new Singer("Bieber", "Canada"));
+        Singer jayz = singers.get("Jay-Z");
+        Unit0Exercises.changeJayZsLocationToLosAngeles(singers);
+        assertEquals("Los Angeles", jayz.getLocation());
+    }
 
-  @Test
-  public void testRemoveJepsenFromSingers() {
-    HashMap<String, Singer> singers = new HashMap<String, Singer>();
-    singers.put("Beyonce", new Singer("Beyonce", "USA"));
-    singers.put("Jay-Z", new Singer("Jay-Z", "USA"));
-    singers.put("Bieber", new Singer("Bieber", "Canada"));
-    singers.put("Drake", new Singer("Drake", "Canada"));
-    singers.put("Jepsen", new Singer("Jepsen", "Canada"));
+    @Test
+    public void testRemoveJepsenFromSingers() {
+        HashMap<String, Singer> singers = new HashMap<String, Singer>();
+        singers.put("Beyonce", new Singer("Beyonce", "USA"));
+        singers.put("Jay-Z", new Singer("Jay-Z", "USA"));
+        singers.put("Bieber", new Singer("Bieber", "Canada"));
+        singers.put("Drake", new Singer("Drake", "Canada"));
+        singers.put("Jepsen", new Singer("Jepsen", "Canada"));
 
-    Unit0Exercises.removeJepsenFromSingers(singers);
-    assertFalse(singers.containsKey("Jepsen"));
-  }
+        Unit0Exercises.removeJepsenFromSingers(singers);
+        assertFalse(singers.containsKey("Jepsen"));
+    }
 }
