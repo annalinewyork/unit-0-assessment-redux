@@ -74,9 +74,9 @@ public class Unit0Exercises {
 
     public static boolean isMultipleOfX(int n, int x) {
 
-        if (n%x==0 && x!=0){
+        if (n % x == 0 && x != 0) {
             return true;
-        }else
+        } else
             return false;
 
         // 0 is a multiple of every number (except 0)
@@ -116,10 +116,13 @@ public class Unit0Exercises {
     public static boolean isEmptyString(String str) {
 
         if (str.length() == 0 && str == null) {
+            // if (str.equals(" ");
             return true;
-        } else
+        }
+        else {
             return false;
-    }
+        }
+}
 
     // Given string `s1`, `s2` and a positive integer `x`,
     // return a string that is equal to s1 + s2 repeated x times.
@@ -161,44 +164,49 @@ public class Unit0Exercises {
     }
 
     public static Singer returnBeyonce() {
-        Singer b = new Singer("Beyonce","USA");
+        Singer famous = new Singer("Beyonce","USA");
         // should return an instance of Singer with the name "Beyonce" and location "USA"
-        return null;
+        return famous;
     }
 
     public static Singer returnSingerChild(Singer s1, Singer s2) {
-        s1.setName("Ada");
-        s1.setLocation("NewYork");
 
-        s2.setName("John");
-        s2.setLocation("Beijing");
-
+        Singer SingerChild = new Singer(s1.getName(),s2.getLocation());
         // should return an instance of Singer with the name of s1 and the location of s2.
         // For example:
         //      Singer queenB = new Singer("Beyonce", "USA");
         //      Singer rihanna = new Singer("Rihanna", "Barbados");
         //      returnSingerChild(queenB, rihanna) ==> returns an instance of Singer with name "Beyonce" and location "Barbados".
-        return null;
+        return SingerChild;
     }
 
     public static HashMap<String, Singer> returnSingers() {
-        HashMap singer = new HashMap();
+        HashMap<String,Singer> people =new HashMap<String,Singer>();
+        Singer beyonce = new Singer("Beyonce","USA");
+        Singer jayz = new Singer("Jay-Z","USA");
+        Singer bieber = new Singer("Bieber","Canada");
+        Singer drake = new Singer("Drake","Canada");
+        Singer jepsen = new Singer("Jepsen", "Canada");
 
-        singer.put("Beyonce", "USA");
-        singer.put("Jay-Z",  "USA");
-        singer.put("Bieber","Canada");
-        singer.put("Drake", "Canada");
-        singer.put("Jepsen","Canada");
+        people.put(beyonce.getName(),beyonce);
+        people.put(jayz.getName(),jayz);
+        people.put(bieber.getName(),bieber);
+        people.put(drake.getName(),drake);
+        people.put(jepsen.getName(),jepsen);
+
         // should return a HashMap of the following singers:
-
-        return singer;
+        return people;
     }
 
     public static boolean isFromCanada(Singer person) {
-        return false;
+
+        return person.getLocation().equals("Canada");
     }
 
     public static void changeJayZsLocationToLosAngeles(HashMap<String, Singer> people) {
+
+        people.get("Jay-Z").setLocation("Los Angeles");
+
         // people will have the values of the `returnSingers()` method you filled in previously.
         // the city should be set to "Los Angeles"
         // old value of Jay-Z:
@@ -208,6 +216,8 @@ public class Unit0Exercises {
     }
 
     public static void removeJepsenFromSingers(HashMap<String, Singer> people) {
+
+        people.remove("Jepsen");
         // people will have the values of the `returnSingers()` method you filled in previously.
         // old keys in `people`:
         //  ["Beyonce", "Jay-Z", "Bieber", "Drake", "Jepsen"]
